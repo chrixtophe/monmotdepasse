@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Générateur de mot passe | Password generator</title>
-  <meta name="description" content="Générateur de mots de passe - password generator - Application pour génerer simplement des nouveaux mots de passe.">
+  <meta name="description" content="Générateur de mots de passe - password generator - Application pour générer simplement des nouveaux mots de passe.">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -26,58 +26,58 @@
   <div class="container">
 
     <div class="header clearfix">  
-      <h2 class="text-muted">Mon mot de passe</h2>
       <nav>
         <ul class="nav nav-pills pull-right">
-            <li><a href="#securite" role="button">En savoir plus</a></li>
-            <li><a href="#about" role="button">A propos</a></li>
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#securite">En savoir plus</a></li>
+            <li role="presentation"><a href="#about">A propos</a></li>
         </ul>
       </nav>
+      <h2 class="text-muted">Mon mot de passe</h2>
     </div>
 
     <div class="jumbotron">
       <h1>Générateur de mots de passe</h1>
-      <p class="lead">Application gratuite et libre pour <strong>générer des mots de passe</strong></p>
+      <p class="lead">Application gratuite et libre pour <strong>générer des mots de passe</strong>. Vous pouvez consulter le code source <a href="https://github.com/chrixtophe/monmotdepasse" title="code source de l'application">ici</a></p>
     </div>
 
-    <div class="row">
-      <form method="post" action="#" class="form-inline">
-        
-        <fieldset>
-            <legend class="text-info text-center">Choisissez parmi les options et obtenez votre nouveau mot de passe immédiatement :</legend>
-            <div class="text-center text-warning password-container">
-                <button type="submit" class="btn btn-primary" name="generate">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
-                <input type="text" class="form-control" id="#" placeholder="Votre nouveau mot de passe">
-            </div>
-        </fieldset>
-        
-        <fieldset>
-            <legend>Options :</legend>
-            <div class="checkbox"><label for="minuscules" ><input type="checkbox" name="minuscules" id="minuscules" checked="checked" />Lettres minuscules</label></div><br />
-            <div class="checkbox"><label for="majuscules" ><input type="checkbox" name="majuscules" id="majuscules" checked="checked" />Lettres majuscules</label></div><br />
-            <div class="checkbox"><label for="chiffres" ><input type="checkbox" name="chiffres" id="chiffres" checked="checked" />Chiffres</label></div><br />
-            <div class="checkbox"><label for="caracteresspeciaux" ><input type="checkbox" name="caracteresspeciaux" id="caracteresspeciaux" />Caract&egrave;res speciaux</label></div><br />
-            
-            <label for="longueur" >Combien de caract&egrave;res aura le mot de passe ?</label>
-            <select name="longueur" class="form-control">
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10" selected="selected">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-            </select>
-        </fieldset>
+    <form method="post" action="#" class="form-inline">
       
-      </form>
-    </div>
+      <fieldset>
+          <legend class="text-info text-center">Choisissez parmi les options et obtenez votre nouveau mot de passe immédiatement :</legend>
+          <div class="text-center text-warning password-container">
+              <button type="submit" class="btn btn-primary" name="generate">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
+              <input type="text" class="form-control" id="#" placeholder="Votre nouveau mot de passe">
+          </div>
+      </fieldset>
+      
+      <fieldset>
+          <legend>Options :</legend>
+          <div class="checkbox"><label for="minuscules" ><input type="checkbox" name="minuscules" id="minuscules" checked="checked" />&nbsp;Lettres minuscules</label></div><br />
+          <div class="checkbox"><label for="majuscules" ><input type="checkbox" name="majuscules" id="majuscules" checked="checked" />&nbsp;Lettres majuscules</label></div><br />
+          <div class="checkbox"><label for="chiffres" ><input type="checkbox" name="chiffres" id="chiffres" checked="checked" />&nbsp;Chiffres</label></div><br />
+          <div class="checkbox"><label for="caracteresspeciaux" ><input type="checkbox" name="caracteresspeciaux" id="caracteresspeciaux" />&nbsp;Caract&egrave;res speciaux</label></div><br />
+          
+          <label for="longueur" >Combien de caract&egrave;res aura le mot de passe ?</label>
+          <select name="longueur" class="form-control">
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10" selected="selected">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+          </select>
+      </fieldset>
+    
+    </form>
+
   </div><!-- .container -->
 
   <!-- Latest compiled and minified JavaScript for Bootstrap -->
