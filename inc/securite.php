@@ -3,14 +3,14 @@
         <h2>L'importance du mot de passe dans la sécurité sur internet</h2>
     </div>
     <article class="modal-body">
-        <p>Un mot de passe vous est demandé chaque jour sur chacun des sites internet ou vous possédez un compte.
+        <p>Un <strong>mot de passe</strong> vous est demandé chaque jour sur chacun des sites internet ou vous possédez un compte.
             Que ce soit sur facebook, google, msn, yahoo... Vous avez besoin d'un mot de passe.
             La règle d'or sur internet est de changer ses mots passe régulièrement. Pensez également à ne pas choisir
             un mot de passe trop court ou trop évident (comme votre nom, votre prénom ou le nom de votre ville...)</p>
 
         <p>Un bon mot de passe doit mélanger des chiffres et des lettres. Certains pirates utilisent des scripts ou des
             logiciels pour essayer d'entrer sur vos comptes. En premier lieu les mots de passe courts ou les mots
-            courants sont ciblés. Donc pensez à choisir un nouveau mot de passe qui comporte une dizaine de caractères
+            courants sont ciblés. Donc pensez à <strong>choisir un nouveau mot de passe</strong> qui comporte une dizaine de caractères
             alphanumériques.</p>
 
         <p>Chaque compte sur chaque site internet devrait avoir son propre mot de passe. Imaginez qu'un petit malin
@@ -19,7 +19,7 @@
             sensibles, un autre pour les sites courants mais qui contiennet des données importantes, et un autre pour
             les sites moins importants.</p>
 
-        <p>Enfin, ne stockez pas votre mot de passe en ligne!! Evitez d'enregistrer un mot de passe en ligne s'il n'est
+        <p>Enfin, ne stockez pas votre <strong>mot de passe en ligne</strong>!! Evitez d'<strong>enregistrer un mot de passe</strong> en ligne s'il n'est
             pas crypté. N'enregistrez pas non plus vos mots de passe sur un ordinateur partagé!</p>
 
         <p>Pour aller plus loin je vous propose un très bon <a href="https://www.google.com/intl/fr/goodtoknow/online-safety/passwords/" rel="nofollow">article de google</a> sur la sécurité en ligne et ce qu'il faut
