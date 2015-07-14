@@ -3,7 +3,10 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    name: Christophe Baldy
+    role: Concepteur et dévelopeur
+    twitter: @chrixtophe
+    Location: Montréal, QC
 
 # THANKS
 
@@ -13,3 +16,4 @@
 
     HTML5, CSS3
     jQuery, Modernizr
+    javascript
