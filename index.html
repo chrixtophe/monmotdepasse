@@ -32,9 +32,8 @@
     <div class="header clearfix">
       <nav>
         <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="#">Home</a></li>
             <li role="presentation"><a href="#securite" role="button" data-toggle="modal">En savoir plus</a></li>
-            <li role="presentation"><a href="#about">A propos</a></li>
+            <li role="presentation"><a href="#about" role="button" data-toggle="modal">A propos</a></li>
         </ul>
       </nav>
       <h2 class="text-muted">Mon mot de passe</h2>
@@ -83,38 +82,69 @@
 
     </form>
 
-    <section id="securite" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-            <h2>L'importance du mot de passe dans la sécurité sur internet</h2>
+    <section id="securite" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h2>L'importance du mot de passe dans la sécurité sur internet</h2>
+            </div>
+            <article class="modal-body">
+                <p>Un mot de passe vous est demandé chaque jour sur chacun des sites internet ou vous possédez un compte.
+                    Que ce soit sur facebook, google, msn, yahoo... Vous avez besoin d'un mot de passe.
+                    La règle d'or sur internet est de changer ses mots passe régulièrement. Pensez également à ne pas choisir
+                    un mot de passe trop court ou trop évident (comme votre nom, votre prénom ou le nom de votre ville...)</p>
+
+                <p>Un bon mot de passe doit mélanger des chiffres et des lettres. Certains pirates utilisent des scripts ou des
+                    logiciels pour essayer d'entrer sur vos comptes. En premier lieu les mots de passe courts ou les mots
+                    courants sont ciblés. Donc pensez à choisir un nouveau mot de passe qui comporte une dizaine de caractères
+                    alphanumériques.</p>
+
+                <p>Chaque compte sur chaque site internet devrait avoir son propre mot de passe. Imaginez qu'un petit malin
+                    trouve votre mot de passe unique, qui se trouve être le nom de votre animal préféré. Il prendrait ainsi
+                    possession de toute votre vie numérique! Une pratique consiste à créer un mot de passe pour les sites
+                    sensibles, un autre pour les sites courants mais qui contiennet des données importantes, et un autre pour
+                    les sites moins importants.</p>
+
+                <p>Enfin, ne stockez pas votre mot de passe en ligne!! Evitez d'enregistrer un mot de passe en ligne s'il n'est
+                    pas crypté. N'enregistrez pas non plus vos mots de passe sur un ordinateur partagé!</p>
+
+                <p>Pour aller plus loin je vous propose un très bon <a href="https://www.google.com/intl/fr/goodtoknow/online-safety/passwords/" rel="nofollow">article de google</a> sur la sécurité en ligne et ce qu'il faut
+                    savoir sur les mots de passe.
+                    Egalement <a href="http://www.securite-informatique.gouv.fr/autoformations/motdepasse/co/Mots_de_Passe.html" rel="nofollow">un dossier plus général</a> sur la sécurité informatique par le gouvernement français.
+                    Et finalement un excellent article de <a href="http://www.slate.fr/story/8729/un-mot-de-passe-inviolable-en-cinq-minutes-maj" rel="nofollow">Slate.fr</a> sur le sujet, je vous conseil de le lire attentivement.
+                </p>
+            </article>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-        <article class="modal-body">
-            <p>Un mot de passe vous est demandé chaque jour sur chacun des sites internet ou vous possédez un compte.
-                Que ce soit sur facebook, google, msn, yahoo... Vous avez besoin d'un mot de passe.
-                La règle d'or sur internet est de changer ses mots passe régulièrement. Pensez également à ne pas choisir
-                un mot de passe trop court ou trop évident (comme votre nom, votre prénom ou le nom de votre ville...)</p>
+    </section>
 
-            <p>Un bon mot de passe doit mélanger des chiffres et des lettres. Certains pirates utilisent des scripts ou des
-                logiciels pour essayer d'entrer sur vos comptes. En premier lieu les mots de passe courts ou les mots
-                courants sont ciblés. Donc pensez à choisir un nouveau mot de passe qui comporte une dizaine de caractères
-                alphanumériques.</p>
+    <section id="about" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h2>A propos du générateur de mots de passe</h2>
+            </div>
+            <article class="modal-body">
+                <p>Le générateur de mots de passe vous permet de changer rapidement vos <strong>mots de passe</strong> lorsque vous êtes à court
+                  d'inspiration et que vous avez oublié vos logins pour la énième fois!! :). C'est comme ça que je l'ai conçut.
 
-            <p>Chaque compte sur chaque site internet devrait avoir son propre mot de passe. Imaginez qu'un petit malin
-                trouve votre mot de passe unique, qui se trouve être le nom de votre animal préféré. Il prendrait ainsi
-                possession de toute votre vie numérique! Une pratique consiste à créer un mot de passe pour les sites
-                sensibles, un autre pour les sites courants mais qui contiennet des données importantes, et un autre pour
-                les sites moins importants.</p>
+                <p>Je dois quotidiennement me rappeler de plusieurs mots de passe, et je dois en générer des nouveaux régulièrement.
+                  J'ai pensé que je n'étais surement pas le seul dans ce cas. Qui ne s'est pas retrouvé démuni au moment de choisir
+                  un mot de passe sur site ou on vous demande 10 caractères, avec des chiffres, des lettres, puis des majuscules...?
+                  Bref, choisir un nouveau mot de passe peut devenir un vrai calvaire sur lequel on déteste perdre du temps.</p>
 
-            <p>Enfin, ne stockez pas votre mot de passe en ligne!! Evitez d'enregistrer un mot de passe en ligne s'il n'est
-                pas crypté. N'enregistrez pas non plus vos mots de passe sur un ordinateur partagé!</p>
+                <p>J'espère que le <strong>générateur de mots de passe</strong> vous sera utile. Si vous avez des questions ou des commentaires,
+                  n'hésitez pas en m'en faire part, <a href="http://christophebaldy.net/" >contactez-moi</a></p>
 
-            <p>Pour aller plus loin je vous propose un très bon <a href="https://www.google.com/intl/fr/goodtoknow/online-safety/passwords/" rel="nofollow">article de google</a> sur la sécurité en ligne et ce qu'il faut
-                savoir sur les mots de passe.
-                Egalement <a href="http://www.securite-informatique.gouv.fr/autoformations/motdepasse/co/Mots_de_Passe.html" rel="nofollow">un dossier plus général</a> sur la sécurité informatique par le gouvernement français.
-                Et finalement un excellent article de <a href="http://www.slate.fr/story/8729/un-mot-de-passe-inviolable-en-cinq-minutes-maj" rel="nofollow">Slate.fr</a> sur le sujet, je vous conseil de le lire attentivement.
-            </p>
-        </article>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <p>Ce site ne récupère aucune données personnelles. Un outils Google Analytics mesure la fréquentation de façon anonyme.</p>
+            </article>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
     </section>
 
