@@ -15,13 +15,13 @@ var caracteresSpeciaux = ["&gt;","&lt;",",",";",".","/",":","&amp;","|",")","(",
 var resultat = [];
 
 /*
- * Fonctions d'affichage
+ * Fonction d'affichage
  */
 
 // Gère l'affichage des messages à l'endroit souhaité
 function affiche(message, id) {
-  var outputDiv = document.getElementById(id);
-  outputDiv.innerHTML = message;
+	var outputDiv = document.getElementById(id);
+	outputDiv.innerHTML = message;
 }
 
 /*
@@ -34,25 +34,27 @@ function checkForm() {
 	var inputChiffres = document.getElementById('chiffres').checked;
 	var inputCaracteresSpeciaux = document.getElementById('caracteresspeciaux').checked;
 	nombreDeCaracteres = document.getElementById('nombreDeCaracteres').value;
+
+	if (nombreDeCaracteres < 8) {
+		var messageAvertissement = 'Il est conseillé de selectionner au moins 10 caractères pour une protection plus forte';
+		var pMessage = document.getElementById("information");
+		pMessage.className = 'text-warning';
+		pMessage.innerHTML += messageAvertissement;
+	}
+
+	if (inputMinuscules == false || inputMajuscules == false || inputChiffres == false) {
+		var messageAvertissement = '<p class="text-warning">Il est vivement conseillé de mélanger majuscules, minuscules et chiffres.</p>';
+		var information = document.getElementById('panneauCentral');
+		information.innerHTML += messageAvertissement;
+	}
 }
 
-
-
-
-
-// Lors du clic
-	// Est-ce que des options sont cochées?
-		// Si aucune option n'est séléctionnée, arrêter
-
-	// Est-ce que l'option lettres minuscules est cochée?
-	// Est-ce que l'option lettres majuscules est cochée?
-	// Est-ce que l'otpion chiffres est cochée?
-	// Est-ce que l'otpion caractères spéciaux est cochée?
-	// Combien de caractères doit avoir le chiffre généré?
-
-	// Tableau avec toutes les options
-	// Choix aléatoire de n valeurs dans le tableau
-	// Retourne les n valeurs
+/*
+	<p class="text-success">...</p>
+	<p class="text-info">...</p>
+	<p class="text-warning">...</p>
+	<p class="text-danger">...</p>
+*/
 
 	// Si le code fait moins de 6 caractères -> faible
 	// Si le code fait entre 6 et 8 caractères
