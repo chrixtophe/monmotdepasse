@@ -11,7 +11,7 @@ var chiffres = function () {
 	var randomNumber = Math.floor(Math.random()*10);
 	return randomNumber;
 };
-var caractèresSpeciaux = ["&gt;","&lt;",",",";",".","/",":","&amp;","|",")","(","~","#","{","}","[","]","-","=","$","*","!","?","+"];
+var caracteresSpeciaux = ["&gt;","&lt;",",",";",".","/",":","&amp;","|",")","(","~","#","{","}","[","]","-","=","$","*","!","?","+"];
 var resultat = [];
 
 /*
@@ -19,14 +19,9 @@ var resultat = [];
  */
 
 // Gère l'affichage des messages à l'endroit souhaité
-function print(message, id) {
+function affiche(message, id) {
   var outputDiv = document.getElementById(id);
   outputDiv.innerHTML = message;
-}
-
-// Affiche le resultat final dans le placeholder de l'élement qui a l'id motDePasse
-function printResult(message) {
-  document.getElementById('motDePasse').placeholder=message;
 }
 
 /*
