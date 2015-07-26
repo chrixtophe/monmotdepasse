@@ -10,44 +10,63 @@ var majuscules = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P
 var chiffres = function () {
 	var randomNumber = Math.floor(Math.random()*10);
 	return randomNumber;
-};
+}
 var caracteresSpeciaux = ["&gt;","&lt;",",",";",".","/",":","&amp;","|",")","(","~","#","{","}","[","]","-","=","$","*","!","?","+"];
 var resultat = [];
+var messageAvertissement = "";
 
 /*
  * Fonction d'affichage
  */
 
 // Gère l'affichage des messages à l'endroit souhaité
-function affiche(message, id) {
+function affiche(message, id, userClass) {
 	var outputDiv = document.getElementById(id);
 	outputDiv.innerHTML = message;
+	outputDiv.className += userClass;
+}
+
+/*
+ * Générateur
+ */
+
+function generate() {
+	console.log("generation du mdp");
 }
 
 /*
  * Vérifier les paramètre de l'utilisateur
  */
 
-function checkForm() {
+function checkForm(evt) {
+	evt.preventDefault();  	// Empêche le formulaire de se recharger
+    evt.stopPropagation();  // Empêche le formulaire de se recharger
+
+    document.getElementById('information').innerHTML = ""; // Supprime le message précédent
+
 	var inputMinuscules = document.getElementById('minuscules').checked;
 	var inputMajuscules = document.getElementById('majuscules').checked;
 	var inputChiffres = document.getElementById('chiffres').checked;
 	var inputCaracteresSpeciaux = document.getElementById('caracteresspeciaux').checked;
 	nombreDeCaracteres = document.getElementById('nombreDeCaracteres').value;
 
-	if (nombreDeCaracteres < 8) {
-		var messageAvertissement = 'Il est conseillé de selectionner au moins 10 caractères pour une protection plus forte';
-		var pMessage = document.getElementById("information");
-		pMessage.className = 'text-warning';
-		pMessage.innerHTML += messageAvertissement;
-	}
-
-	if (inputMinuscules == false || inputMajuscules == false || inputChiffres == false) {
-		var messageAvertissement = '<p class="text-warning">Il est vivement conseillé de mélanger majuscules, minuscules et chiffres.</p>';
-		var information = document.getElementById('panneauCentral');
-		information.innerHTML += messageAvertissement;
+	if (inputMinuscules != true && inputMajuscules != true && inputChiffres != true && inputCaracteresSpeciaux != true) {
+		messageAvertissement = "Vous devez choisir au moins une option ci-dessous";
+		affiche(messageAvertissement, 'information', 'text-warning');
+		generate();
+	} else if (inputMinuscules != true || inputMajuscules != true || inputChiffres != true || inputCaracteresSpeciaux != true) {
+		messageAvertissement = "Il est conseillé de mélanger autant de caractères que possibles pour une meilleure sécurité";
+		affiche(messageAvertissement, 'information', 'text-info');
+		generate();
+	} else {
+		generate();
 	}
 }
+
+// Trouve le formulaire sur la page et lui attache un handler
+var form = document.querySelector('#userForm');
+form.addEventListener('submit', checkForm);  // Chaque fois que le formulaire est soumit on appel checkForm
+
 
 /*
 	<p class="text-success">...</p>

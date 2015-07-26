@@ -44,12 +44,12 @@
       <p class="lead">Application gratuite et libre pour <strong>générer des mots de passe</strong>. Vous pouvez consulter le code source <a href="https://github.com/chrixtophe/monmotdepasse" title="code source de l'application">ici</a></p>
     </div>
 
-    <form method="#" action="#" class="form-inline" onsubmit="return false;">
+    <form method="post" action="#" class="form-inline" id="userForm">
 
       <fieldset>
           <legend class="text-info text-center">Choisissez parmi les options et obtenez votre nouveau mot de passe immédiatement :</legend>
-          <div class="text-center text-warning password-container">
-              <button type="submit" class="btn btn-primary" name="generate" onclick="checkForm()">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
+          <div class="text-center text-warning password-container" id="centerPanel">
+              <button type="submit" class="btn btn-primary" name="generate">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
               <!-- <input type="text" class="form-control" id="motDePasse" placeholder="Votre nouveau mot de passe"> -->
               <div class="form-control" id="motDePasse">Votre nouveau mot de passe ici</div>
               <p id="information"></p>
