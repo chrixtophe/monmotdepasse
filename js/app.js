@@ -7,13 +7,10 @@
 var nombreDeCaracteres;
 var minuscules = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var majuscules = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var chiffres = function () {
-	var randomNumber = Math.floor(Math.random()*10);
-	return randomNumber;
-}
+var chiffres = [0,1,2,3,4,5,6,7,8,9];
 var caracteresSpeciaux = ["&gt;","&lt;",",",";",".","/",":","&amp;","|",")","(","~","#","{","}","[","]","-","=","$","*","!","?","+"];
-var resultat = [];
 var messageAvertissement = "";
+var monMotDePasse = [];
 
 /*
  * Fonction d'affichage
@@ -30,8 +27,38 @@ function affiche(message, id, userClass) {
  * Générateur
  */
 
-function generate() {
-	console.log("generation du mdp");
+function generate(min, maj, chiff, spe, nombre) {
+
+	var statutMinuscules = min;
+	var statutMajuscules = maj;
+	var statutChiffres = chiff;
+	var statutSpeciaux = spe;
+	var statutNombre = nombre;
+	var resultat = [];
+
+	if (statutMinuscules) {
+		monMotDePasse = monMotDePasse.concat(minuscules);
+	}
+	if (statutMajuscules) {
+		monMotDePasse = monMotDePasse.concat(majuscules);
+	}
+	if (statutChiffres) {
+		monMotDePasse = monMotDePasse.concat(chiffres);
+	}
+	if (statutSpeciaux) {
+		monMotDePasse = monMotDePasse.concat(caracteresSpeciaux);
+	}
+
+	var cle = function () {
+		var cleAuHasard = Math.floor(Math.random() * monMotDePasse.length) + 1;
+		return cleAuHasard;
+	}
+
+	for (var i = 0; i < statutNombre; i++) {
+		resultat = resultat.concat(monMotDePasse[cle()]);
+	}
+	affiche(resultat.join(''), 'motDePasse', '');
+	monMotDePasse = [];
 }
 
 /*
@@ -50,38 +77,19 @@ function checkForm(evt) {
 	var inputCaracteresSpeciaux = document.getElementById('caracteresspeciaux').checked;
 	nombreDeCaracteres = document.getElementById('nombreDeCaracteres').value;
 
+	// Messages d'avertissement si une option n'est pas cochée
 	if (inputMinuscules != true && inputMajuscules != true && inputChiffres != true && inputCaracteresSpeciaux != true) {
 		messageAvertissement = "Vous devez choisir au moins une option ci-dessous";
-		affiche(messageAvertissement, 'information', 'text-warning');
-		generate();
+		affiche(messageAvertissement, 'information', 'text-danger');
 	} else if (inputMinuscules != true || inputMajuscules != true || inputChiffres != true || inputCaracteresSpeciaux != true) {
 		messageAvertissement = "Il est conseillé de mélanger autant de caractères que possibles pour une meilleure sécurité";
 		affiche(messageAvertissement, 'information', 'text-info');
-		generate();
+		generate(inputMinuscules, inputMajuscules, inputChiffres, inputCaracteresSpeciaux, nombreDeCaracteres);
 	} else {
-		generate();
+		generate(inputMinuscules, inputMajuscules, inputChiffres, inputCaracteresSpeciaux, nombreDeCaracteres);
 	}
 }
 
 // Trouve le formulaire sur la page et lui attache un handler
 var form = document.querySelector('#userForm');
 form.addEventListener('submit', checkForm);  // Chaque fois que le formulaire est soumit on appel checkForm
-
-
-/*
-	<p class="text-success">...</p>
-	<p class="text-info">...</p>
-	<p class="text-warning">...</p>
-	<p class="text-danger">...</p>
-*/
-
-	// Si le code fait moins de 6 caractères -> faible
-	// Si le code fait entre 6 et 8 caractères
-		// avec des chiffres, des majuscules et des caractères spéciaux -> moyen
-		// sans chiffres ou sans majuscules ou sans caractères spéciaux -> faible
-	// Si le code fait entre 8 et 10 chiffres
-		// avec des chiffres, des majuscules et des caractères spéciaux -> moyen
-		// sans chiffres ou sans majuscules ou sans caractères spéciaux -> faible
-	// SI le code fait plus de 10 chiffres
-		// avec des chiffres, des majuscules et des caractères spéciaux -> fort
-		// sans chiffres ou sans majuscules ou sans caractères spéciaux -> moyen
