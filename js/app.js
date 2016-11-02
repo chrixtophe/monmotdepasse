@@ -62,7 +62,7 @@ function generate(min, maj, chiff, spe, nombre) {
 }
 
 /*
- * Vérifier les paramètre de l'utilisateur
+ * Vérifier les paramètres de l'utilisateur
  */
 
 function checkForm(evt) {
@@ -82,7 +82,7 @@ function checkForm(evt) {
 		messageAvertissement = "Vous devez choisir au moins une option ci-dessous";
 		affiche(messageAvertissement, 'information', 'text-danger');
 	} else if (inputMinuscules != true || inputMajuscules != true || inputChiffres != true || inputCaracteresSpeciaux != true) {
-		messageAvertissement = "Il est conseillé de mélanger autant de caractères que possibles pour une meilleure sécurité";
+		messageAvertissement = "Il est conseillé de mélanger autant de caractères que possible pour une meilleure sécurité";
 		affiche(messageAvertissement, 'information', 'text-info');
 		generate(inputMinuscules, inputMajuscules, inputChiffres, inputCaracteresSpeciaux, nombreDeCaracteres);
 	} else {
