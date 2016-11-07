@@ -10,9 +10,10 @@
         <meta name="description" content="Générateur de mots de passe sécurisés en ligne et gratuit, qui génère des mots de passe forts" >
         <meta name="keywords" content="générateur mot de passe, générateur de mot de passe, generateur mot de passe, mot de passe, mots de passe, generateur de mot de passe, mot de passe sécurisé" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -29,44 +30,42 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h1 class="text-center">Générateur de mots de passe</h1>
-                    <p class="text-center">Créez un mot de passe sécurisé</p>
-                    <h5 class="text-center">Choisissez parmi les options et obtenez votre nouveau mot de passe immédiatement :</h5>
+                    <h4 class="text-center">Créez un mot de passe sécurisé</h4>
                 </div>
 
                 <div class="col-xs-12">
-                    <form method="post" action="#" class="form-inline" id="userForm">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="text-center text-warning password-container" id="centerPanel">
-                                    <button type="submit" class="btn btn-primary" name="generate">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
-                                    <div class="form-control" id="motDePasse">Votre nouveau mot de passe ici</div>
-                                    <p id="information"></p>
-                                </div>
-                            </div>
+                    <h5 class="text-center">Choisissez parmi les options et obtenez votre nouveau mot de passe immédiatement :</h5>
+                    <form id="userForm">
+                        <div class="text-warning password-container">
+                            <button type="submit" role="button" id="submit" class="btn btn-primary" form="userForm" name="generate">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
+                            <div class="form-control" id="motDePasse">Votre nouveau mot de passe ici</div>
+                            <p id="information" class="text-center"></p>
+                        </div>
 
-                            <div class="col-sm-3 col-sm-offset-2 col-lg3 col-lg-offset-3">
-                                <p>Modifier les Options :</p>
-                                <div class="checkbox"><label for="minuscules" ><input type="checkbox" name="minuscules" id="minuscules" checked="checked" />&nbsp;Lettres minuscules</label></div><br />
-                                <div class="checkbox"><label for="majuscules" ><input type="checkbox" name="majuscules" id="majuscules" checked="checked" />&nbsp;Lettres majuscules</label></div><br />
-                                <div class="checkbox"><label for="chiffres" ><input type="checkbox" name="chiffres" id="chiffres" checked="checked" />&nbsp;Chiffres</label></div><br />
-                                <div class="checkbox"><label for="caracteresspeciaux" ><input type="checkbox" name="caracteresspeciaux" id="caracteresspeciaux" />&nbsp;Caract&egrave;res speciaux</label></div><br />
+                        <div class="options">
+                            <div class="options_check">
+                                <label>Modifier les Options :</label>
+                                <div class="checkbox"><label for="minuscules"><input type="checkbox" name="minuscules" id="minuscules" checked="checked" />&nbsp;Lettres minuscules</label></div><br />
+                                <div class="checkbox"><label for="majuscules"><input type="checkbox" name="majuscules" id="majuscules" checked="checked" />&nbsp;Lettres majuscules</label></div><br />
+                                <div class="checkbox"><label for="chiffres"><input type="checkbox" name="chiffres" id="chiffres" checked="checked" />&nbsp;Chiffres</label></div><br />
+                                <div class="checkbox"><label for="caracteresspeciaux"><input type="checkbox" name="caracteresspeciaux" id="caracteresspeciaux" />&nbsp;Caract&egrave;res speciaux</label></div><br />
                             </div>
-                            <div class="col-sm-4 col-sm-offset-1 col-lg-offset-0">
-                                <label for="longueur" >Nombre de caractères?</label>
-                                <select name="longueur" class="form-control" id="nombreDeCaracteres">
-                                  <option value="3">3</option>
-                                  <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                  <option value="7">7</option>
-                                  <option value="8">8</option>
-                                  <option value="9">9</option>
-                                  <option value="10">10</option>
-                                  <option value="11">11</option>
-                                  <option value="12" selected="selected">12</option>
-                                  <option value="13">13</option>
-                                  <option value="14">14</option>
-                                  <option value="15">15</option>
+                            <div class="options_select">
+                                <label for="nombreDeCaracteres" >Nombre de caractères?</label>
+                                <select name="longueur" class="" id="nombreDeCaracteres">
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12" selected="selected">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
                                 </select>
                             </div>
                         </div>
@@ -75,8 +74,8 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-9 col-sm-offset-2 col-md-7 col-md-offset-3">
-                    <section id="securite">
+                <div class="col-xs-12">
+                    <section id="securite" class="options">
                         <h3>L'importance du mot de passe sécurisé</h3>
                         <article>
                             <p>Un bon mot de passe doit mélanger des chiffres et des lettres et des caractères spéciaux.
@@ -94,6 +93,7 @@
             </div>
         </div><!-- .container -->
 
+        <!-- Générateur -->
         <script src="js/app.js"></script>
 
         <!-- Google Analytics -->
