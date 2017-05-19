@@ -1,81 +1,82 @@
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    font-family: "Arial", sans-serif;
-    color: #4E4E4E;
-    background-color: #f1f1f1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-div.form-control {
-    display: inline-block;
-    width: 252px;
+.wrapper {
+    max-width: 525px;
+    margin: 0 auto;
 }
 
-.password-container {
+main {
+    padding: 1em;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+.githubLink {
+    max-width: 100px;
+}
+
+.grey {
+    color: #444444;
+}
+
+.text-center {
     text-align: center;
 }
 
+.text-danger {
+    color: darkred;
+}
+
+.text-info {
+    color: #007CE0;
+}
+
+.checkbox {
+    margin: 4px 0;
+}
+
+.checkbox input {
+    color: #1B1B1B;
+}
+
+.password-container {
+    margin: 30px auto;
+}
+
 button#submit {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    width: 100%;
+    padding: 8px 5px;
 }
 
-div.checkbox {
-    margin:0;
+.form-control {
+    margin: 10px auto;
+    padding: 10px 5px;
+    background-color: #007CE0;
+    color: #f1f1f1;
 }
 
-input[type="checkbox"] {
-    margin-top: 0;
+.options {
+    font-size: .9em;
 }
 
-select.form-control {
-    width: 100px;
+.section-2 {
+    margin-top: 50px;
 }
 
-#information {
-    margin-top : 1em;
-}
-
-/*
- * Media queries
- */
-
-@media (min-width: 768px) {
-    div.form-control {
-        width: 252px;
+@media (min-width: 640px) {
+    .password-container {
+        max-width: 300px;
     }
-    .col-xs-12 + .col-xs-12 {
-        margin-top: 50px;
-    }
-    button#submit {
-        margin-right: 2.2em;
-    }
-    .options {
-        max-width: 540px;
-        margin: 0 auto;
-        clear: both;
-    }
-    .options_check {
-        width: 312px;
-    }
-    .options_check,
-    .options_select {
-        float: left;
+    .password-container {
+        margin: 50px auto;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,107 +3,91 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="fr_CA"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="fr_CA"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr_CA"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Générateur de mots de passe</title>
-        <meta name="description" content="Générateur de mots de passe sécurisés en ligne et gratuit, qui génère des mots de passe forts" >
-        <meta name="keywords" content="générateur mot de passe, générateur de mot de passe, generateur mot de passe, mot de passe, mots de passe, generateur de mot de passe, mot de passe sécurisé" >
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta lang="fr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Générateur de mots de passe</title>
+    <meta name="description" content="Générateur de mots de passe sécurisés en ligne et gratuit, qui génère des mots de passe forts" >
+    <meta name="keywords" content="générateur mot de passe, générateur de mot de passe, generateur mot de passe, mot de passe, mots de passe, generateur de mot de passe, mot de passe sécurisé" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Lien vers le dépôt Github -->
-        <a href="https://github.com/chrixtophe/monmotdepasse"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
+    <!-- Lien vers le dépôt Github -->
+    <a href="https://github.com/chrixtophe/monmotdepasse">
+        <img class="githubLink" style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png">
+    </a>
+    <div class="wrapper">
+        <main>
+            <section>
+                <header>
                     <h1 class="text-center">Générateur de mots de passe</h1>
-                    <h4 class="text-center">Créez un mot de passe sécurisé</h4>
-                </div>
+                    <h3 class="text-center">Créez un mot de passe sécurisé</h3>
+                </header>
 
-                <div class="col-xs-12">
-                    <h5 class="text-center">Choisissez parmi les options et obtenez votre nouveau mot de passe immédiatement :</h5>
-                    <form id="userForm">
-                        <div class="text-warning password-container">
-                            <button type="submit" role="button" id="submit" class="btn btn-primary" form="userForm" name="generate">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
-                            <div class="form-control" id="motDePasse">Votre nouveau mot de passe ici</div>
-                            <p id="information" class="text-center"></p>
+                <p class="text-center grey">Choisissez parmi les options et obtenez votre nouveau mot de passe immédiatement :</p>
+                <form id="userForm">
+                    <div class="text-warning password-container">
+                        <button type="button" role="button" id="submit" form="userForm" name="generate">G&eacute;n&eacute;rer un nouveau mot de passe!</button>
+                        <div class="form-control text-center" id="motDePasse">Votre nouveau mot de passe ici</div>
+                        <p id="information" class="text-center"></p>
+                    </div>
+
+                    <div class="options">
+                        <div class="options_check">
+                            <label>Modifier les Options :</label>
+                            <div class="checkbox"><label for="minuscules"><input type="checkbox" name="minuscules" id="minuscules" checked="checked" />&nbsp;Lettres minuscules</label></div>
+                            <div class="checkbox"><label for="majuscules"><input type="checkbox" name="majuscules" id="majuscules" checked="checked" />&nbsp;Lettres majuscules</label></div>
+                            <div class="checkbox"><label for="chiffres"><input type="checkbox" name="chiffres" id="chiffres" checked="checked" />&nbsp;Chiffres</label></div>
+                            <div class="checkbox"><label for="caracteresspeciaux"><input type="checkbox" name="caracteresspeciaux" id="caracteresspeciaux" checked="checked"/>&nbsp;Caract&egrave;res speciaux</label></div>
                         </div>
-
-                        <div class="options">
-                            <div class="options_check">
-                                <label>Modifier les Options :</label>
-                                <div class="checkbox"><label for="minuscules"><input type="checkbox" name="minuscules" id="minuscules" checked="checked" />&nbsp;Lettres minuscules</label></div><br />
-                                <div class="checkbox"><label for="majuscules"><input type="checkbox" name="majuscules" id="majuscules" checked="checked" />&nbsp;Lettres majuscules</label></div><br />
-                                <div class="checkbox"><label for="chiffres"><input type="checkbox" name="chiffres" id="chiffres" checked="checked" />&nbsp;Chiffres</label></div><br />
-                                <div class="checkbox"><label for="caracteresspeciaux"><input type="checkbox" name="caracteresspeciaux" id="caracteresspeciaux" />&nbsp;Caract&egrave;res speciaux</label></div><br />
-                            </div>
-                            <div class="options_select">
-                                <label for="nombreDeCaracteres" >Nombre de caractères?</label>
-                                <select name="longueur" class="" id="nombreDeCaracteres">
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12" selected="selected">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </div>
+                        <div class="options_select">
+                            <label for="nombreDeCaracteres" >Nombre de caractères?</label>
+                            <select name="longueur" class="" id="nombreDeCaracteres">
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12" selected="selected">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
                         </div>
-                    </form>
-                </div>
-            </div>
+                    </div>
+                </form>
+            </section>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <section id="securite" class="options">
-                        <h3>L'importance du mot de passe sécurisé</h3>
-                        <article>
-                            <p>Un bon mot de passe doit mélanger des chiffres et des lettres et des caractères spéciaux.
-                                Pensez à choisir un nouveau mot de passe qui comporte une douzaine de caractères alphanumériques.</p>
+            <section id="securite" class="section-2">
+                <h3>L'importance du mot de passe sécurisé</h3>
+                <article>
+                    <p>Un bon mot de passe doit mélanger des chiffres et des lettres et des caractères spéciaux.
+                        Pensez à choisir un nouveau mot de passe qui comporte une douzaine de caractères alphanumériques.</p>
 
-                            <p>Chaque compte sur chaque site internet (facebook, google, amazon...) devrait avoir son propre mot de passe.</p>
+                    <p>Chaque compte sur chaque site internet (facebook, google, amazon...) devrait avoir son propre mot de passe.</p>
 
-                            <p>Enfin, ne stockez pas votre mot de passe en ligne!! Evitez d'enregistrer un mot de passe en ligne s'il n'est
-                                pas crypté. N'enregistrez pas non plus vos mots de passe sur un ordinateur partagé!</p>
+                    <p>Enfin, ne stockez pas votre mot de passe en ligne!! Evitez d'enregistrer un mot de passe en ligne s'il n'est
+                        pas crypté. N'enregistrez pas non plus vos mots de passe sur un ordinateur partagé!</p>
 
-                            <p>Il existe des solutions <a href="http://lifehacker.com/5529133/five-best-password-managers" title="Les 5 meilleurs gestionnaires de mot de passe">pour stocker ses mots de passe de façon sécuritaire</a> (Site: Lifehacker, article en anglais).</p>
-                        </article>
-                    </section>
-                </div>
-            </div>
-        </div><!-- .container -->
-
-        <!-- Générateur -->
-        <script src="js/app.js"></script>
-
-        <!-- Google Analytics -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-54743367-3','auto');ga('send','pageview');
-        </script>
-    </body>
+                    <p>Il existe des solutions <a href="http://lifehacker.com/5529133/five-best-password-managers" title="Les 5 meilleurs gestionnaires de mot de passe">pour stocker ses mots de passe de façon sécuritaire</a> (Site: Lifehacker, article en anglais).</p>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
 </html>
